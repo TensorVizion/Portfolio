@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <!-- saved from url=(0060)file:///C:/Users/hellc/Downloads/tensorvizion-portfolio.html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TensorVizion — AI Developer &amp; Creative</title>
 <link rel="preconnect" href="https://fonts.googleapis.com/">
@@ -364,35 +365,48 @@
   }
 
   .project-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 1.5px; background: rgba(0,212,255,0.07); max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* ✅ Changed from 3 to 4 */
+    gap: 1.5px;
+    background: rgba(0,212,255,0.07);
+    max-width: 1200px;
   }
 
   .project-card {
-    background: var(--navy); padding: 2.25rem;
-    position: relative; overflow: hidden;
+    background: var(--navy);
+    padding: 2.25rem;
+    position: relative;
+    overflow: hidden;
     transition: background 0.3s;
   }
 
   .project-card::after {
     content: ''; position: absolute; inset: 0;
     background: linear-gradient(135deg, rgba(0,212,255,0.04) 0%, transparent 60%);
-    opacity: 0; transition: opacity 0.3s;
+    opacity: 0;
+    transition: opacity 0.3s;
   }
 
-  .project-card:hover { background: var(--navy2); }
-  .project-card:hover::after { opacity: 1; }
-
-  .project-card.featured {
-    grid-column: span 2;
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 2rem; align-items: start;
+  .project-card:hover {
+    background: var(--navy2);
   }
 
+  .project-card:hover::after {
+    opacity: 1;
+  }
+
+  /* ❌ Removed .project-card.featured entirely — all cards are now equal width */
+  
   .project-tag {
-    font-family: 'JetBrains Mono', monospace; font-size: 0.65rem;
-    color: var(--cyan); letter-spacing: 0.15em; text-transform: uppercase;
-    margin-bottom: 1rem; display: flex; align-items: center; gap: 0.4rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--cyan);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
   }
 
   .project-tag::before {
@@ -414,38 +428,64 @@
     font-size: 0.88rem; color: var(--slate); line-height: 1.75; margin-bottom: 1.5rem;
   }
 
-  .project-stack { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .project-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
 
   .stack-tag {
-    font-family: 'JetBrains Mono', monospace; font-size: 0.63rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.63rem;
     padding: 0.2rem 0.5rem;
-    background: rgba(123,94,167,0.12); border: 1px solid rgba(123,94,167,0.25);
-    color: var(--violet); letter-spacing: 0.04em;
+    background: rgba(123,94,167,0.12);
+    border: 1px solid rgba(123,94,167,0.25);
+    color: var(--violet);
+    letter-spacing: 0.04em;
   }
 
   .stack-tag.cyan-tag {
-    background: rgba(0,212,255,0.07); border-color: rgba(0,212,255,0.2); color: var(--cyan);
+    background: rgba(0,212,255,0.07);
+    border-color: rgba(0,212,255,0.2);
+    color: var(--cyan);
   }
 
-  .project-metrics { display: flex; flex-direction: column; gap: 0.75rem; }
+  .project-metrics {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
 
   .metric-row {
-    display: flex; justify-content: space-between; align-items: center;
-    font-family: 'JetBrains Mono', monospace; font-size: 0.75rem;
-    border-bottom: 1px solid rgba(255,255,255,0.04); padding-bottom: 0.7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    padding-bottom: 0.7rem;
   }
 
   .metric-key { color: var(--slate); }
   .metric-val { color: var(--green); }
 
   .project-link {
-    display: inline-flex; align-items: center; gap: 0.4rem;
-    font-size: 0.8rem; font-weight: 600; color: var(--cyan);
-    text-decoration: none; letter-spacing: 0.05em; margin-top: 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--cyan);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    margin-top: 1.25rem;
     transition: gap 0.2s;
   }
 
-  .project-link:hover { gap: 0.7rem; }
+  .project-link:hover {
+    gap: 0.7rem;
+  }
+
   .project-link.violet-link { color: var(--violet); }
   .project-link.gold-link { color: var(--gold); }
 
@@ -453,20 +493,29 @@
   #experience { background: var(--navy2); }
 
   .exp-layout {
-    display: grid; grid-template-columns: 260px 1fr;
-    gap: 4rem; max-width: 1000px;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 4rem;
+    max-width: 1000px;
   }
 
   .exp-nav {
-    display: flex; flex-direction: column;
+    display: flex;
+    flex-direction: column;
     border-left: 1px solid rgba(0,212,255,0.15);
   }
 
   .exp-tab {
-    font-family: 'JetBrains Mono', monospace; font-size: 0.78rem;
-    padding: 0.9rem 1.4rem; color: var(--slate); cursor: pointer;
-    border-left: 2px solid transparent; margin-left: -1px;
-    transition: all 0.2s; letter-spacing: 0.04em; line-height: 1.4;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    padding: 0.9rem 1.4rem;
+    color: var(--slate);
+    cursor: pointer;
+    border-left: 2px solid transparent;
+    margin-left: -1px;
+    transition: all 0.2s;
+    letter-spacing: 0.04em;
+    line-height: 1.4;
   }
 
   .exp-tab:hover { color: var(--white); }
@@ -475,39 +524,103 @@
   .exp-panel { display: none; }
   .exp-panel.active { display: block; }
 
-  .exp-role { font-size: 1.3rem; font-weight: 700; letter-spacing: -0.01em; color: var(--white); margin-bottom: 0.2rem; }
-  .exp-company { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--cyan); margin-bottom: 0.2rem; }
-  .exp-period { font-family: 'JetBrains Mono', monospace; font-size: 0.73rem; color: var(--slate); margin-bottom: 1.5rem; letter-spacing: 0.05em; }
-
-  .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.85rem; }
-
-  .exp-bullets li {
-    font-size: 0.93rem; color: var(--slate); line-height: 1.75;
-    padding-left: 1.25rem; position: relative;
+  .exp-role {
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--white);
+    margin-bottom: 0.2rem;
   }
 
-  .exp-bullets li::before { content: '▸'; position: absolute; left: 0; color: var(--cyan); }
+  .exp-company {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--cyan);
+    margin-bottom: 0.2rem;
+  }
+
+  .exp-period {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.73rem;
+    color: var(--slate);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  .exp-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .exp-bullets li {
+    font-size: 0.93rem;
+    color: var(--slate);
+    line-height: 1.75;
+    padding-left: 1.25rem;
+    position: relative;
+  }
+
+  .exp-bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--cyan);
+  }
+
   .exp-bullets li strong { color: var(--white); }
 
   /* EDUCATION */
   #education {}
 
   .edu-card {
-    background: var(--navy2); border: 1px solid rgba(255,179,71,0.12);
-    padding: 2.5rem; max-width: 700px; position: relative;
+    background: var(--navy2);
+    border: 1px solid rgba(255,179,71,0.12);
+    padding: 2.5rem;
+    max-width: 700px;
+    position: relative;
     clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
   }
 
   .edu-card::before {
-    content: '';  position: absolute; top: 0; left: 0;
-    width: 3px; height: 100%;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
     background: linear-gradient(180deg, var(--gold), var(--violet));
   }
 
-  .edu-degree { font-size: 1.4rem; font-weight: 700; color: var(--white); margin-bottom: 0.4rem; }
-  .edu-school { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--gold); margin-bottom: 0.25rem; }
-  .edu-year { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--slate); letter-spacing: 0.08em; margin-bottom: 1rem; }
-  .edu-note { font-size: 0.9rem; color: var(--slate); line-height: 1.7; }
+  .edu-degree {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.4rem;
+  }
+
+  .edu-school {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--gold);
+    margin-bottom: 0.25rem;
+  }
+
+  .edu-year {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--slate);
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+  }
+
+  .edu-note {
+    font-size: 0.9rem;
+    color: var(--slate);
+    line-height: 1.7;
+  }
+
   .edu-note strong { color: var(--white); }
 
   /* CONTACT */
@@ -518,82 +631,176 @@
   }
 
   .contact-grid {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 6rem; align-items: start; max-width: 1200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+    max-width: 1200px;
   }
 
   .contact-headline {
-    font-size: clamp(2.5rem, 5vw, 3.75rem); font-weight: 700;
-    letter-spacing: -0.03em; line-height: 1.05; margin-bottom: 1.5rem;
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    margin-bottom: 1.5rem;
   }
 
   .contact-headline .accent { color: var(--cyan); }
 
-  .contact-text { font-size: 1rem; color: var(--slate); line-height: 1.8; margin-bottom: 2rem; }
+  .contact-text {
+    font-size: 1rem;
+    color: var(--slate);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
 
-  .contact-links { display: flex; flex-direction: column; gap: 0.75rem; }
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
 
   .contact-link {
-    display: flex; align-items: center; gap: 1rem;
-    font-family: 'JetBrains Mono', monospace; font-size: 0.82rem;
-    color: var(--white); text-decoration: none; padding: 0.9rem 1.25rem;
-    background: rgba(0,212,255,0.03); border: 1px solid rgba(0,212,255,0.1);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.82rem;
+    color: var(--white);
+    text-decoration: none;
+    padding: 0.9rem 1.25rem;
+    background: rgba(0,212,255,0.03);
+    border: 1px solid rgba(0,212,255,0.1);
     transition: all 0.2s;
   }
 
-  .contact-link:hover { background: rgba(0,212,255,0.08); border-color: var(--cyan); color: var(--cyan); }
-  .contact-link-icon { font-size: 1rem; width: 1.4rem; text-align: center; }
-
-  .contact-form { display: flex; flex-direction: column; gap: 1rem; }
-
-  .form-group input, .form-group textarea {
-    width: 100%;
-    background: rgba(5,10,20,0.6); border: 1px solid rgba(0,212,255,0.12);
-    color: var(--white); font-family: 'Space Grotesk', sans-serif;
-    font-size: 0.9rem; padding: 0.875rem 1rem; outline: none;
-    transition: border-color 0.2s; resize: vertical;
+  .contact-link:hover {
+    background: rgba(0,212,255,0.08);
+    border-color: var(--cyan);
+    color: var(--cyan);
   }
 
-  .form-group input::placeholder, .form-group textarea::placeholder { color: var(--slate2); }
-  .form-group input:focus, .form-group textarea:focus { border-color: var(--cyan); }
-  .form-group textarea { min-height: 120px; }
+  .contact-link-icon { font-size: 1rem; width: 1.4rem; text-align: center; }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    background: rgba(5,10,20,0.6);
+    border: 1px solid rgba(0,212,255,0.12);
+    color: var(--white);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.9rem;
+    padding: 0.875rem 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+    resize: vertical;
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: var(--slate2);
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: var(--cyan);
+  }
 
   .form-submit {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    background: var(--cyan); color: var(--navy);
-    font-family: 'Space Grotesk', sans-serif; font-size: 0.9rem; font-weight: 700;
-    padding: 0.875rem 2rem; border: none; cursor: pointer;
-    letter-spacing: 0.05em; transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--cyan);
+    color: var(--navy);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 0.875rem 2rem;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    transition: all 0.2s;
     clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
   }
 
-  .form-submit:hover { background: var(--white); transform: translateY(-2px); }
+  .form-submit:hover {
+    background: var(--white);
+    transform: translateY(-2px);
+  }
 
   /* FOOTER */
   footer {
-    position: relative; z-index: 1;
+    position: relative;
+    z-index: 1;
     padding: 2rem 4rem;
-    display: flex; justify-content: space-between; align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     border-top: 1px solid rgba(0,212,255,0.08);
   }
 
-  .footer-logo { font-family: 'JetBrains Mono', monospace; font-size: 0.88rem; color: var(--slate); }
-  .footer-copy { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--slate2); letter-spacing: 0.05em; }
+  .footer-logo {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.88rem;
+    color: var(--slate);
+  }
+
+  .footer-copy {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--slate2);
+    letter-spacing: 0.05em;
+  }
 
   /* GLOW ORBS */
-  .glow-orb { position: fixed; border-radius: 50%; pointer-events: none; filter: blur(80px); opacity: 0.11; z-index: 0; }
-  .glow-orb-1 { width: 600px; height: 600px; background: var(--cyan); top: -200px; right: -100px; }
-  .glow-orb-2 { width: 400px; height: 400px; background: var(--violet); bottom: 20%; left: -100px; }
+  .glow-orb {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(80px);
+    opacity: 0.11;
+    z-index: 0;
+  }
 
-  @media (prefers-reduced-motion: reduce) { .cursor { animation: none; } .scroll-line { animation: none; } }
+  .glow-orb-1 {
+    width: 600px;
+    height: 600px;
+    background: var(--cyan);
+    top: -200px;
+    right: -100px;
+  }
+
+  .glow-orb-2 {
+    width: 400px;
+    height: 400px;
+    background: var(--violet);
+    bottom: 20%;
+    left: -100px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cursor { animation: none; }
+    .scroll-line { animation: none; }
+  }
 
   @media (max-width: 900px) {
     nav { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
     #hero, section, footer { padding-left: 1.5rem; padding-right: 1.5rem; }
-    .about-grid, .contact-grid, .exp-layout { grid-template-columns: 1fr; gap: 2.5rem; }
-    .project-grid { grid-template-columns: 1fr; }
-    .project-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
+    .about-grid, .contact-grid, .exp-layout {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+    .project-grid {
+      grid-template-columns: 1fr; /* stacks on mobile */
+    }
     .stats-bar { grid-template-columns: repeat(2, 1fr); }
     .stat-item { padding: 1.5rem; }
   }
@@ -609,13 +816,13 @@
 <nav>
   <div class="nav-logo">Tensor<span>Vizion</span></div>
   <ul class="nav-links">
-    <li><a href="file:///C:/Users/hellc/Downloads/tensorvizion-portfolio.html#about">About</a></li>
-    <li><a href="file:///C:/Users/hellc/Downloads/tensorvizion-portfolio.html#projects">Projects</a></li>
-    <li><a href="file:///C:/Users/hellc/Downloads/tensorvizion-portfolio.html#experience">Experience</a></li>
-    <li><a href="file:///C:/Users/hellc/Downloads/tensorvizion-portfolio.html#education">Education</a></li>
-    <li><a href="file:///C:/Users/hellc/Downloads/tensorvizion-portfolio.html#contact">Contact</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="file:///C:/Users/hellc/Downloads/tensorvizion-portfolio.html#contact" class="nav-cta">Hire Me</a>
+  <a href="#contact" class="nav-cta">Hire Me</a>
 </nav>
 
 <!-- HERO -->
@@ -640,8 +847,8 @@
   </p>
 
   <div class="hero-actions">
-    <a href="file:///C:/Users/hellc/Downloads/tensorvizion-portfolio.html#projects" class="btn-primary">View My Work ↓</a>
-    <a href="file:///C:/Users/hellc/Downloads/tensorvizion-portfolio.html#contact" class="btn-secondary">Get in Touch</a>
+    <a href="#projects" class="btn-primary">View My Work ↓</a>
+    <a href="#contact" class="btn-secondary">Get in Touch</a>
   </div>
 
   <div class="scroll-hint">
@@ -652,19 +859,19 @@
 
 <!-- STATS -->
 <div class="stats-bar">
-  <div class="stat-item" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+  <div class="stat-item">
     <div class="stat-number">14+</div>
     <div class="stat-label">Years in Design</div>
   </div>
-  <div class="stat-item" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+  <div class="stat-item">
     <div class="stat-number">5+</div>
     <div class="stat-label">Years in AI Dev</div>
   </div>
-  <div class="stat-item" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+  <div class="stat-item">
     <div class="stat-number">3</div>
     <div class="stat-label">Active Roles</div>
   </div>
-  <div class="stat-item" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+  <div class="stat-item">
     <div class="stat-number">33.17T</div>
     <div class="stat-label">Params Trained</div>
   </div>
@@ -672,7 +879,7 @@
 
 <!-- ABOUT -->
 <section id="about">
-  <div class="about-grid" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+  <div class="about-grid">
     <div class="about-text">
       <div class="section-eyebrow">About</div>
       <h2 class="section-title">Rare stack.<br>Rarer perspective.</h2>
@@ -701,7 +908,7 @@
     </div>
 
     <div>
-      <div class="about-profile" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+      <div class="about-profile">
         <div class="profile-header">
           <div class="profile-avatar">TV</div>
           <div>
@@ -736,32 +943,23 @@
 
   <div class="project-grid">
 
-    <!-- FEATURED: Obsidian Blog UI -->
-    <div class="project-card featured" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
-      <div>
-        <div class="project-tag violet-tag">Featured · Open Source · Next.js</div>
-        <div class="project-name">Obsidian Bold Blog UI</div>
-        <p class="project-desc">A bold, dark-mode blog UI built with Next.js and v0, deployed on Vercel. A brutalist visual system designed for developers who want their writing to hit as hard as their code — obsidian palette, strong type hierarchy, and zero visual noise.</p>
-        <div class="project-stack">
-          <span class="stack-tag">Next.js</span>
-          <span class="stack-tag">TypeScript</span>
-          <span class="stack-tag">CSS</span>
-          <span class="stack-tag">v0 / Vercel</span>
-          <span class="stack-tag">shadcn/ui</span>
-        </div>
-        <a href="https://github.com/TensorVizion/Obsidian-Bold-Blog-UI" class="project-link violet-link" target="_blank">View on GitHub →</a>
+    <!-- Obsidian Blog UI -->
+    <div class="project-card">
+      <div class="project-tag violet-tag">Open Source · Next.js</div>
+      <div class="project-name">Obsidian Bold Blog UI</div>
+      <p class="project-desc">A bold, dark-mode blog UI built with Next.js and v0, deployed on Vercel. A brutalist visual system designed for developers who want their writing to hit as hard as their code — obsidian palette, strong type hierarchy, and zero visual noise.</p>
+      <div class="project-stack">
+        <span class="stack-tag">Next.js</span>
+        <span class="stack-tag">TypeScript</span>
+        <span class="stack-tag">CSS</span>
+        <span class="stack-tag">v0 / Vercel</span>
+        <span class="stack-tag">shadcn/ui</span>
       </div>
-      <div class="project-metrics">
-        <div class="metric-row"><span class="metric-key">Stack</span><span class="metric-val">TypeScript 91%</span></div>
-        <div class="metric-row"><span class="metric-key">Live Deploy</span><span class="metric-val">Vercel ✓</span></div>
-        <div class="metric-row"><span class="metric-key">Architecture</span><span class="metric-val">App Router</span></div>
-        <div class="metric-row"><span class="metric-key">CSS</span><span class="metric-val">Tailwind + Custom</span></div>
-        <div class="metric-row"><span class="metric-key">License</span><span class="metric-val">Public Repo</span></div>
-      </div>
+      <a href="https://github.com/TensorVizion/Obsidian-Bold-Blog-UI" class="project-link violet-link" target="_blank">View on GitHub →</a>
     </div>
 
     <!-- Owen 4.6 -->
-    <div class="project-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+    <div class="project-card">
       <div class="project-tag">HuggingFace · LLM Fine-Tune</div>
       <div class="project-name">O-Wen 4.6</div>
       <p class="project-desc">A Qwen3-architecture causal language model post-trained and fine-tuned by TensorVizion. Built with Unsloth for efficient training, supports text-generation-inference and conversational endpoints. Apache 2.0 licensed.</p>
@@ -774,8 +972,8 @@
       <a href="https://huggingface.co/TensorVizion/O-Wen-4.6" class="project-link" target="_blank">View on HuggingFace →</a>
     </div>
 
-    <!-- Jinja LLM -->
-    <div class="project-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+    <!-- Orri LLM -->
+    <div class="project-card">
       <div class="project-tag gold-tag">HuggingFace · 3.2B Model</div>
       <div class="project-name">Orri LLM</div>
       <p class="project-desc">A 3.2 billion parameter Qwen2-architecture model quantized to 4-bit with bitsandbytes for efficient local inference. Jinja brings serious model weight to resource-constrained environments without sacrificing capability.</p>
@@ -785,32 +983,24 @@
         <span class="stack-tag">4-bit Quant</span>
         <span class="stack-tag">safetensors</span>
       </div>
-      <a href="https://huggingface.co/TensorVizion/Jinja" class="project-link gold-link" target="_blank">View on HuggingFace →</a>
+      <a href="https://huggingface.co/TensorVizion/orri-llm" class="project-link gold-link" target="_blank">View on HuggingFace →</a>
     </div>
-    
-   <!-- FEATURED: Loi Micro LLM -->
-    <div class="project-card featured" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
-      <div>
-        <div class="project-tag violet-tag">Featured · Open Source · HuggingFace</div>
-        <div class="project-name">LOI LLM</div>
-        <p class="project-desc">A small but powerful 3.2 B parameters model that can run on almost any persons machine</p>
-        <div class="project-stack">
-          <span class="stack-tag">Next.js</span>
-          <span class="stack-tag">TypeScript</span>
-          <span class="stack-tag">CSS</span>
-          <span class="stack-tag">v0 / Vercel</span>
-          <span class="stack-tag">shadcn/ui</span>
-        </div>
-        <a href="https://huggingface.co/TensorVizion/Loi-LLM" class="project-link violet-link" target="_blank">View on HuggingFace→</a>
+
+    <!-- LOI LLM -->
+    <div class="project-card">
+      <div class="project-tag violet-tag">HuggingFace · Open Source</div>
+      <div class="project-name">LOI LLM</div>
+      <p class="project-desc">A compact yet powerful Llama-3.2-3B-Instruct based model, optimized for local inference via 4-bit quantization. Runs smoothly on consumer hardware — ideal for edge deployment and personal AI tools.</p>
+      <div class="project-stack">
+        <span class="stack-tag">Qwen2</span>
+        <span class="stack-tag">bitsandbytes</span>
+        <span class="stack-tag">4-bit Quant</span>
+        <span class="stack-tag">LoRA</span>
+        <span class="stack-tag">safetensors</span>
       </div>
-      <div class="project-metrics">
-        <div class="metric-row"><span class="metric-key">Stack</span><span class="metric-val">LoRA</span></div>
-        <div class="metric-row"><span class="metric-key">Live Deploy</span><span class="metric-val">8 bit Quant</span></div>
-        <div class="metric-row"><span class="metric-key">Architecture</span><span class="metric-val">Transformers</span></div>
-        <div class="metric-row"><span class="metric-key">CSS</span><span class="metric-val">Safetensors</span></div>
-        <div class="metric-row"><span class="metric-key">License</span><span class="metric-val">PEFT</span></div>
-      </div>
+      <a href="https://huggingface.co/TensorVizion/Loi-LLM" class="project-link violet-link" target="_blank">View on HuggingFace →</a>
     </div>
+
   </div>
 </section>
 
@@ -872,7 +1062,7 @@
   <div class="section-eyebrow">Education</div>
   <h2 class="section-title" style="margin-bottom:2.5rem">Foundation.</h2>
 
-  <div class="edu-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+  <div class="edu-card">
     <div class="edu-degree">Audio Engineering · Honours</div>
     <div class="edu-school">Metalworks Institute</div>
     <div class="edu-year">Graduated 2014</div>
@@ -887,7 +1077,7 @@
 
 <!-- CONTACT -->
 <section id="contact">
-  <div class="contact-grid" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+  <div class="contact-grid">
     <div>
       <div class="section-eyebrow">Contact</div>
       <h2 class="contact-headline">Let's build<br>something<br><span class="accent">worth seeing.</span></h2>
@@ -994,5 +1184,5 @@ function switchTab(idx) {
 })();
 </script>
 
-
-</body></html>
+</body>
+</html>
